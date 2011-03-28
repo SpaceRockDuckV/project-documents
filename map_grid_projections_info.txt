@@ -1,1 +1,21 @@
-this doc will contain info regarding map grid projections for the project. this is the initial revision and contains only cursory info. this will be edited at a later time to include more detailed info. 
+this doc will contain info regarding map grid projections for the project. this is the initial revision and contains only cursory info. this will be edited at a later time to include more detailed info.
+
+web links with some useful info: 
+http://demo.mapserver.org/tutorial/example1-1.html
+http://www.mapserver.org/mapfile/
+
+very basic but explains some key features of the mapfile object system in MapServer.
+
+important object elements of the mapfile:
+
+EXTENT - this field contains the geographical extent displayed by this map. it consistes of two coordinate pairs. the first pair is North-West corner (top right), the second pair is South-East corner (bottom left). the units are not specified here so examination of the linked data is necessary to fully comprehend this field.
+
+some basic info on map projections:
+
+http://en.wikipedia.org/wiki/Map_projection
+
+this is overly general. more specific links will be added soon.
+
+comments: three types of projections ought to be supported by our system. Spherical (i.e. lattitude, longitude), Cylindrical (e.g. Mercator projection, rectangle tiled maps), Equidistant Azimuthal (e.g. curvy sided grid tiles). other projects exist and we might think about using if we want. but those three are the most familiar. Lat/Long is the most spatially natural. Cylindrical is the best for displaying on a flat surface (like a printed map or computer screen). Azimuthal has some desirable geometrical properties. 
+
+Opinion: we should use Cylindrical as our base grid since it is a good format for 2D display. we should use GDAL and/or Proj4 library functions to move between projections as needed. 
