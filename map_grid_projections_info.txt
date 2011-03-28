@@ -1,0 +1,1 @@
+this doc will contain info regarding map grid projections for the project. this is the initial revision and contains only cursory info. this will be edited at a later time to include more detailed info. 
